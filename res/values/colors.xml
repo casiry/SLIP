@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#C3C3C3</color>
+    <color name="text">#FFFFFF</color>
+    <color name="text_disabled">#707070</color>
+    
+    <color name="button_normal">#FFFFFF</color>
+    
+    <color name="grad_end_on">#00AAFF</color> 
+    <color name="grad_start_on">#00AAFF</color>
+    
+    <color name="grad_end_off">#00AAFF</color>
+    <color name="grad_start_off">#0088CC</color>
+    
+    <color name="button_disabled">#00AAFF</color>
+    
+    <color name="border_off">#00AAFF</color> <!-- white -->
+    <color name="border_on">#0088CC</color> <!-- black -->
+    <color name="border_focused">#FFAA70</color> <!-- orange -->
+    
+</resources>

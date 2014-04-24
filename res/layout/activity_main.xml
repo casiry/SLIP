@@ -1,0 +1,144 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@drawable/slip_button"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:background="@color/background"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/background"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_display_text"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"         		
+         		
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textDimSm"
+                android:textColor="@color/text"
+                android:gravity="center_horizontal"
+                android:background="@drawable/slip_text_display"                
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.25"
+            android:background="@color/background"
+            android:orientation="horizontal" >
+
+            <ToggleButton
+                android:id="@+id/btn_zone_a"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"                
+                android:layout_weight=".33"
+                android:background="@drawable/slip_togglebutton"
+                android:textColor="@drawable/slip_button_text_color"
+                android:textOff="@string/btnZoneAOff"
+                android:textOn="@string/btnZoneAOn"
+                android:textSize="@dimen/btnDim" />
+
+            <ToggleButton
+                android:id="@+id/btn_zone_b"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight=".33"
+                android:background="@drawable/slip_togglebutton"
+                android:textColor="@drawable/slip_button_text_color"
+                android:textOff="@string/btnZoneBOff"
+                android:textOn="@string/btnZoneBOn"
+                android:textSize="@dimen/btnDim" />
+
+            <ToggleButton
+                android:id="@+id/btn_zone_c"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight=".33"
+                android:background="@drawable/slip_togglebutton"
+                android:textColor="@drawable/slip_button_text_color"
+                android:textOff="@string/btnZoneCOff"
+                android:textOn="@string/btnZoneCOn"
+                android:textSize="@dimen/btnDim" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25"
+            android:background="@color/background"
+            android:orientation="vertical" >
+
+            <ToggleButton
+                android:id="@+id/btn_price"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/slip_togglebutton"
+                android:textColor="@drawable/slip_button_text_color"
+                android:textOff="@string/btnPriceRedOff"
+                android:textOn="@string/btnPriceRedOn"
+                android:textSize="@dimen/btnDim" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.25"
+            android:background="@color/background"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_send"
+                style="@drawable/slip_button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/slip_button"
+                android:textColor="@drawable/slip_button_text_color"
+                android:text="@string/btnSend"
+                android:textSize="@dimen/textDim" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

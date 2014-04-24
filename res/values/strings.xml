@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SLIP</string>
+    <string name="action_settings">Settings</string>
+    <string name="btnZoneAOn">A</string>
+    <string name="btnZoneAOff">A</string>
+    <string name="btnZoneBOn">B</string>
+    <string name="btnZoneBOff">B</string>
+    <string name="btnZoneCOn">C</string>
+    <string name="btnZoneCOff">C</string>
+    <string name="btnPriceRedOn">RED. PRIS</string>
+    <string name="btnPriceRedOff">HELT PRIS</string>
+    <string name="btnSend">SKICKA</string>
+    <string name="btnSent">SKICKAR&#8230;</string>
+    <string name="startstring">****</string>
+    
+
+</resources>
