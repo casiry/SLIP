@@ -139,7 +139,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			btnSend.setEnabled(true);
 		}
 		
-		displayTextView.setText("Kostnad: " + totalCost + ":00 kr");
+		displayTextView.setText("Kostnad: " + totalCost + ":00 kr (+ ev. SMS avgifter)");
 	}
 	
 	public int calculateCost() {
