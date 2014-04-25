@@ -31,9 +31,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	String strZoneA = "";
 	String strZoneB = "";
 	String strZoneC = "";
-	String stringToSend;
-	String phoneNumber;
+	String stringToSend = "";
 	
+	//Phone number as of 2014-04-25
+	String phoneNumber = "0767201010";
+	
+	//Pricing as of 2014-04-25
 	int costOneZone = 36;
 	int costTwoZones = 54;
 	int costThreeZones = 72;
@@ -68,10 +71,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		btnSend = (Button) findViewById(R.id.btn_send);
 		btnSend.setOnClickListener(this);
-		btnSend.setEnabled(false);
-		
-		phoneNumber = "0767201010"; 
-		stringToSend = "";
+		btnSend.setEnabled(false);	
 	}
 
 	public void onClick(View v) {
