@@ -7,5 +7,6 @@
 	<dimen name="btnDim">32dp</dimen>
 	<dimen name="textDim">32dp</dimen>
 	<dimen name="textDimSm">24dp</dimen>
+	<dimen name="textDimXSm">12dp</dimen>
 	
 </resources>

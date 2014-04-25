@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/background"
-            android:orientation="horizontal" >
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/tv_display_text"
@@ -28,8 +28,18 @@
                 android:textSize="@dimen/textDimSm"
                 android:textColor="@color/text"
                 android:gravity="center_horizontal"
-                android:background="@drawable/slip_text_display"                
-                android:visibility="visible" />
+                android:background="@drawable/slip_text_display_top" />
+
+            <TextView
+                android:id="@+id/tv_display_disclaimer"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"                
+                android:textSize="@dimen/textDimXSm"     
+                android:textColor="@color/text_faded"
+                android:gravity="center_horizontal"                                
+                android:background="@drawable/slip_text_display_bottom" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -50,7 +60,10 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="2dp"                
                 android:layout_weight=".33"
+                
                 android:background="@drawable/slip_togglebutton"
+                
+                
                 android:textColor="@drawable/slip_button_text_color"
                 android:textOff="@string/btnZoneAOff"
                 android:textOn="@string/btnZoneAOn"

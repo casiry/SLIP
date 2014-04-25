@@ -24,7 +24,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	ToggleButton btnPrice;
 	Button btnSend;
 
-	TextView displayTextView;
+	TextView displayTextViewTop;
+	TextView displayTextViewBottom;
 
 	String strPricing = "H";
 	String strZoneA = "";
@@ -49,8 +50,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		displayTextView = (TextView) findViewById(R.id.tv_display_text);
-		displayTextView.setText("V.G. välj önskat antal zoner...");
+		displayTextViewTop = (TextView) findViewById(R.id.tv_display_text);
+		displayTextViewTop.setText("V.G. välj önskat antal zoner");
+		
+		displayTextViewBottom = (TextView) findViewById(R.id.tv_display_disclaimer);
+		displayTextViewBottom.setText("(ev. operatörskostnader tillkommer)");
 		
 		btnZoneA = (ToggleButton) findViewById(R.id.btn_zone_a);
 		btnZoneA.setOnClickListener(this);
@@ -139,7 +143,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			btnSend.setEnabled(true);
 		}
 		
-		displayTextView.setText("Kostnad: " + totalCost + ":00 kr (+ ev. SMS avgifter)");
+		displayTextViewTop.setText("Kostnad: " + totalCost + ":00 kr");
 	}
 	
 	public int calculateCost() {
