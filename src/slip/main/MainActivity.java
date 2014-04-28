@@ -54,7 +54,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 
 		displayTextViewTop = (TextView) findViewById(R.id.tv_display_text);
-		displayTextViewTop.setText("V.G. välj önskat antal zoner");
+		displayTextViewTop.setText("Kostnad: " + totalCost + ":00 kr");
 		
 		displayTextViewBottom = (TextView) findViewById(R.id.tv_display_disclaimer);
 		displayTextViewBottom.setText("(ev. operatörskostnader tillkommer)");
