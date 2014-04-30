@@ -1,11 +1,6 @@
 package slip.main;
 
 import android.app.Activity;
-import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.Menu;
@@ -13,7 +8,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends Activity implements OnClickListener {
@@ -35,6 +29,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	String stringToSend = "";
 	
 	//SL SMS phone number as of 2014-04-25
+	//SL PHONE 0767201010
 	String phoneNumber = "0767201010";
 	
 	//SL SMS ticket pricing as of 2014-04-25
@@ -128,7 +123,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		
 		case R.id.btn_send: {
-			sendSMS(phoneNumber, stringToSend);							
+			ConfirmDialogFragment confirmDialogFragment = new ConfirmDialogFragment();
+			confirmDialogFragment.show(getFragmentManager(), "Confirmdialog");
+//			sendSMS(phoneNumber, stringToSend);							
 			break;			
 			}
 		}
@@ -172,47 +169,18 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		return cost;
 	}
-	
-	public void sendSMS(String phoneNumber, String completeStringToSend) {
-		String SENT = "SMS SENT";
-
-		PendingIntent sentPint = PendingIntent.getBroadcast(this, 0,
-				new Intent(SENT), 0);
-
-		registerReceiver(new BroadcastReceiver() {
-			public void onReceive(Context arg0, Intent arg1) {
-				switch (getResultCode()) {
-				case Activity.RESULT_OK: {
-					Toast.makeText(getBaseContext(), "SMS SENT", Toast.LENGTH_SHORT).show();
-					unregisterReceiver(this);
-					finish();
-					break;					
-				}
-				
-				case SmsManager.RESULT_ERROR_NO_SERVICE: {
-					Toast.makeText(getBaseContext(), "Failed: No signal.", Toast.LENGTH_SHORT).show();
-					break; 
-				}
-				
-				case SmsManager.RESULT_ERROR_NULL_PDU: {
-					Toast.makeText(getBaseContext(), "Failed: No PDU was provided.", Toast.LENGTH_SHORT).show();
-					break;
-				}
-				case SmsManager.RESULT_ERROR_RADIO_OFF: {
-					Toast.makeText(getBaseContext(), "Failed: Device radio is off.", Toast.LENGTH_SHORT).show();					
-					break;
-				}
-			}
-		}
-		}, new IntentFilter(SENT));
-
-		SmsManager smsManager = SmsManager.getDefault();
-		smsManager.sendTextMessage(phoneNumber, null, completeStringToSend, sentPint, null);
-	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+	
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+	
+	public String getStringToSend() {
+		return this.stringToSend;
 	}
 }

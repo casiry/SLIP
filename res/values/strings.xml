@@ -13,5 +13,9 @@
     <string name="btnPriceRedOff">HELT PRIS</string>
     <string name="btnSend">SKICKA</string>
     <string name="btnSent">SKICKAR SMS&#8230;</string>
-    
+    <string name="title_activity_confirm_dialog">ConfirmDialog</string>
+    <string name="confirmString">Är du säker?</string>
+    <string name="yes">Ja</string>
+    <string name="cancel">Avbryt</string>
+
 </resources>
