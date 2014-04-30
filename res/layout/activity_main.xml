@@ -1,5 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@drawable/slip_button"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@drawable/slip_togglebutton"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/background" >
@@ -11,36 +12,36 @@
         android:background="@color/background"
         android:orientation="vertical" >
 
+        <!-- Display Text View -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/background"
+            android:background="@drawable/slip_togglebutton"
             android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/tv_display_text"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_gravity="center"         		
-         		
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="@dimen/textDimSm"
-                android:textColor="@color/text"
+                android:layout_gravity="center"
                 android:gravity="center_horizontal"
-                android:background="@drawable/slip_text_display_top" />
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/text"
+                android:textSize="@dimen/textDimMed" />
 
             <TextView
                 android:id="@+id/tv_display_disclaimer"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_gravity="center"                
-                android:textSize="@dimen/textDimXSm"     
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
                 android:textColor="@color/text_faded"
-                android:gravity="center_horizontal"                                
-                android:background="@drawable/slip_text_display_bottom" />
-
+                android:textSize="@dimen/textDimSm" />
         </LinearLayout>
+
+        <!-- Zone Buttons -->
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -55,29 +56,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="2dp"                
+                android:layout_margin="2dp"
                 android:layout_weight=".33"
-                
                 android:background="@drawable/slip_togglebutton"
-                
-                
                 android:textColor="@drawable/slip_button_text_color"
                 android:textOff="@string/btnZoneAOff"
                 android:textOn="@string/btnZoneAOn"
-                android:textSize="@dimen/btnDim" />
+                android:textSize="@dimen/btnDim"
+                tools:ignore="NestedWeights" />
 
             <ToggleButton
                 android:id="@+id/btn_zone_b"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="2dp"
+                android:layout_margin="2dp"
                 android:layout_weight=".33"
                 android:background="@drawable/slip_togglebutton"
                 android:textColor="@drawable/slip_button_text_color"
@@ -90,42 +83,52 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="2dp"
+                android:layout_margin="2dp"
                 android:layout_weight=".33"
                 android:background="@drawable/slip_togglebutton"
                 android:textColor="@drawable/slip_button_text_color"
                 android:textOff="@string/btnZoneCOff"
                 android:textOn="@string/btnZoneCOn"
                 android:textSize="@dimen/btnDim" />
-
         </LinearLayout>
+
+        <!-- Price Toggle Switch -->
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="0.25"
-            android:background="@color/background"
-            android:orientation="vertical" >
+            android:layout_gravity="center"
+            android:layout_weight=".25"
+            android:gravity="center"
+            android:orientation="horizontal" >
 
             <ToggleButton
-                android:id="@+id/btn_price"
+                android:id="@+id/btn_price_full"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="2dp"
+                android:layout_margin="2dp"
+                android:layout_weight=".5"
                 android:background="@drawable/slip_togglebutton"
                 android:textColor="@drawable/slip_button_text_color"
                 android:textOff="@string/btnPriceRedOff"
-                android:textOn="@string/btnPriceRedOn"
-                android:textSize="@dimen/btnDim" />
+                android:textOn="@string/btnPriceRedOff"
+                android:textSize="@dimen/textDimMed"
+                tools:ignore="NestedWeights" />
 
+            <ToggleButton
+                android:id="@+id/btn_price_red"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="2dp"
+                android:layout_weight=".5"
+                android:background="@drawable/slip_togglebutton"
+                android:textColor="@drawable/slip_button_text_color"
+                android:textOff="@string/btnPriceRedOn"
+                android:textOn="@string/btnPriceRedOn"
+                android:textSize="@dimen/textDimMed" />
         </LinearLayout>
+
+        <!-- Send Button -->
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -137,7 +140,6 @@
 
             <Button
                 android:id="@+id/btn_send"
-                style="@drawable/slip_button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
@@ -146,12 +148,10 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="2dp"
                 android:background="@drawable/slip_button"
-                android:textColor="@drawable/slip_button_text_color"
                 android:text="@string/btnSend"
+                android:textColor="@drawable/slip_button_text_color"
                 android:textSize="@dimen/textDim" />
-
         </LinearLayout>
-
     </LinearLayout>
 
 </FrameLayout>

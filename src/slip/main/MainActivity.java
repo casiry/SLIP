@@ -21,7 +21,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	ToggleButton btnZoneA;
 	ToggleButton btnZoneB;
 	ToggleButton btnZoneC;
-	ToggleButton btnPrice;
+	ToggleButton btnPriceFull;
+	ToggleButton btnPriceReduced;
 	Button btnSend;
 
 	TextView displayTextViewTop;
@@ -33,10 +34,10 @@ public class MainActivity extends Activity implements OnClickListener {
 	String strZoneC = "";
 	String stringToSend = "";
 	
-	//Phone number as of 2014-04-25
+	//SL SMS phone number as of 2014-04-25
 	String phoneNumber = "0767201010";
 	
-	//Pricing as of 2014-04-25
+	//SL SMS ticket pricing as of 2014-04-25
 	int costOneZone = 36;
 	int costTwoZones = 54;
 	int costThreeZones = 72;
@@ -65,10 +66,13 @@ public class MainActivity extends Activity implements OnClickListener {
 		btnZoneB.setOnClickListener(this);
 		btnZoneC = (ToggleButton) findViewById(R.id.btn_zone_c);
 		btnZoneC.setOnClickListener(this);
-
-		btnPrice = (ToggleButton) findViewById(R.id.btn_price);
-		btnPrice.setOnClickListener(this);
-
+		
+		btnPriceReduced = (ToggleButton) findViewById(R.id.btn_price_red);
+		btnPriceReduced.setOnClickListener(this);
+		btnPriceFull = (ToggleButton) findViewById(R.id.btn_price_full);
+		btnPriceFull.setOnClickListener(this);
+		btnPriceFull.setChecked(true);
+		
 		btnSend = (Button) findViewById(R.id.btn_send);
 		btnSend.setOnClickListener(this);
 		btnSend.setEnabled(false);	
@@ -76,59 +80,59 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.btn_price: {
-			if (btnPrice.isChecked()) {
-				strPricing = "R";
-				updateString();
-				break;
-			} else {
-				strPricing = "H";
-				updateString();
-				break;
-			}
+		
+		case R.id.btn_price_full: {
+			btnPriceReduced.setChecked(false);
+			btnPriceReduced.setEnabled(true);
+			btnPriceFull.setEnabled(false);
+			strPricing="H";			
+			break;
+		}
+		
+		case R.id.btn_price_red: {
+			btnPriceFull.setChecked(false);
+			btnPriceFull.setEnabled(true);
+			btnPriceReduced.setEnabled(false);
+			strPricing="R";			
+			break;
 		}
 
 		case R.id.btn_zone_a: {
 			if (btnZoneA.isChecked()) {
-				strZoneA = "A";
-				updateString();
+				strZoneA = "A";				
 				break;
 			} else {
-				strZoneA = "";
-				updateString();
+				strZoneA = "";				
 				break;
 			}
 		}
 
 		case R.id.btn_zone_b: {
 			if (btnZoneB.isChecked()) {
-				strZoneB = "B";
-				updateString();
+				strZoneB = "B";				
 				break;
 			} else {
-				strZoneB = "";
-				updateString();
+				strZoneB = "";				
 				break;
 			}
 		}
 
 		case R.id.btn_zone_c: {
 			if (btnZoneC.isChecked()) {
-				strZoneC = "C";
-				updateString();
+				strZoneC = "C";				
 				break;
 			} else {
-				strZoneC = "";
-				updateString();
+				strZoneC = "";				
 				break;
 			}
 		}
 		
 		case R.id.btn_send: {
 			sendSMS(phoneNumber, stringToSend);							
-			break;
+			break;			
 			}
 		}
+		updateString();
 	}	
 	
 	public void updateString() {
@@ -179,9 +183,10 @@ public class MainActivity extends Activity implements OnClickListener {
 			public void onReceive(Context arg0, Intent arg1) {
 				switch (getResultCode()) {
 				case Activity.RESULT_OK: {
-					Toast.makeText(getBaseContext(), "SMS SENT", Toast.LENGTH_SHORT).show();		
+					Toast.makeText(getBaseContext(), "SMS SENT", Toast.LENGTH_SHORT).show();
+					unregisterReceiver(this);
 					finish();
-					break;
+					break;					
 				}
 				
 				case SmsManager.RESULT_ERROR_NO_SERVICE: {

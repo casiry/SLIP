@@ -6,7 +6,7 @@
     <dimen name="displayDimension">28dp</dimen>
 	<dimen name="btnDim">32dp</dimen>
 	<dimen name="textDim">32dp</dimen>
-	<dimen name="textDimSm">24dp</dimen>
-	<dimen name="textDimXSm">12dp</dimen>
+	<dimen name="textDimSm">12dp</dimen>
+	<dimen name="textDimMed">24dp</dimen>
 	
 </resources>

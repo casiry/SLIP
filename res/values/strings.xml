@@ -9,11 +9,9 @@
     <string name="btnZoneBOff">B</string>
     <string name="btnZoneCOn">C</string>
     <string name="btnZoneCOff">C</string>
-    <string name="btnPriceRedOn">RED. PRIS</string>
+    <string name="btnPriceRedOn">REDUCERAT PRIS</string>
     <string name="btnPriceRedOff">HELT PRIS</string>
     <string name="btnSend">SKICKA</string>
-    <string name="btnSent">SKICKAR&#8230;</string>
-    <string name="startstring">****</string>
+    <string name="btnSent">SKICKAR SMS&#8230;</string>
     
-
 </resources>
