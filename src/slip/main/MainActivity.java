@@ -125,7 +125,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.btn_send: {
 			ConfirmDialogFragment confirmDialogFragment = new ConfirmDialogFragment();
 			confirmDialogFragment.show(getFragmentManager(), "Confirmdialog");
-//			sendSMS(phoneNumber, stringToSend);							
+			sendSMS(phoneNumber, stringToSend);							
 			break;			
 			}
 		}
